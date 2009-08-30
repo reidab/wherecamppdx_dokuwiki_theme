@@ -12,13 +12,7 @@
 <?php @include(dirname(__FILE__).'/topheader.html') ?>
 <div id="wrapper">
    <div id="header">
-      <div class='inner_container'>
-         <h1 id="site-title"><span><?php tpl_link(wl(),$conf['title'],'name="top" accesskey="h" title="[ALT+H]"') ?></span></h1>
-         <div id="site-description">
-            <h2>The conference for open source citizens</h2>
-            <p id='conference-date-location'>June 17&ndash;19, 2009 <span class='separator'>|</span> Portland, Oregon</p>
-         </div>
-      </div>
+         <h1 id="blog-title"><span><?php tpl_link(wl(),$conf['title'],'name="top" accesskey="h" title="[ALT+H]"') ?></span></h1>
     </div>
 
    <div id="access">
@@ -26,25 +20,18 @@
       <a href="#content" title="Skip to content">Skip to content</a>
     </div>
 
-    <div id="menu">
-         <ul>
-            <li id="menu_first_item"><a href='/about/' title='About' class=''>About</a></li>
-            <li><a href='/attend/' title='Attend' class=''>Attend</a></li>
-            <li><a href='/sessions/' title='Sessions' class=''>Sessions</a></li>
-            <li><a href="/volunteer/" title="Volunteer">Get Involved</a></li>
-            <li><a href="/sponsors/" title="Sponsors">Sponsors</a></li>
-            <li><a href="/blog/">Blog</a></li>
-            <li><a href="/wiki/">Wiki</a></li>
-         </ul>
-      </div>
-
-      <div id="subnav" class='navbar'>
-         <div class='inner_container'>
-            <h2>Planning Wiki</h2>
+    <div id='menu'>
+      <ul>
+        <li><a href='/' class='first'>News</a></li>
+        <li><a href='/about/'>About</a></li>
+        <li><a href='/specifics/'>Specifics</a></li>
+        <li><a href='/sessions/' class=''>Sessions</a></li>
+        <li><a href='/attendees/' class=''>Attendees</a></li>
+        <li><a href='/sponsorships/' class='last'>Sponsors</a></li>
+      </ul>
+    </div>
 
 
-         </div>
-      </div>
    </div>
 
    <div id="container">
@@ -52,11 +39,18 @@
 
       <div id="content">
         <?php html_msgarea()?>
-        <?php tpl_content()?>
-        <div class="meta">
-           <div class="doc">
-              <?php tpl_pageinfo()?>
-           </div>
+        <div class='hentry' id='wiki-content'>
+          <h2 class='entry-title'>
+            <?php tpl_link(wl($ID,'do=backlink'),tpl_pagetitle($ID,true),'title="'.$lang['btn_backlink'].'"')?>
+          </h2>
+          <div class='entry-content'>
+            <?php tpl_content()?>
+          </div>
+          <div class="entry-meta">
+             <div class="doc">
+                <?php tpl_pageinfo()?>
+             </div>
+          </div>
         </div>
       </div>
   <?php flush()?>
