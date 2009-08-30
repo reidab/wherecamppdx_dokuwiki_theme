@@ -252,6 +252,14 @@ border-bottom: 1px dotted #000;
 	border-bottom: 0;
 }
 
+#header {
+  z-index: 1;
+}
+
+.hentry {
+  z-index: 10;
+}
+
 /* ordered lists */
 ol {
 font-size:0.8125em;
