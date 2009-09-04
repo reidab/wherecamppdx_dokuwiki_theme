@@ -60,7 +60,9 @@
    <ul class="xoxo">
       <li id="topbar">
          <h3><?php echo $conf['title']; ?></h3>
+	 <!-- Igal: we don't need editable menues.
          <?php tpl_menu1(); ?>
+	 -->
       </li>
 
       <li id='wiki_controls'>
