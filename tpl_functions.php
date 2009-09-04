@@ -36,10 +36,7 @@ function tpl_bottombar()
    
    echo '<ul>';
    
-    echo '<li class="pre-bulletted"><a href="?do=recent" class="interwiki" title="'.$lang['btn_rec'].'">'.$lang['btn_recent'].'</a></li>';
-    
     if($perm > AUTH_READ) {
-        echo '<li class="pre-bulletted"><a href="?do=revisions" class="interwiki" title="'.$lang['btn_revs'].'">'.$lang['btn_revs'].'</a></li>';
         if(file_exists(wikiFN($ID))) {
             echo '<li class="pre-bulletted"><a href="?id='.$ID.'&amp;do=edit" class="interwiki" title="'.$lang['btn_edit'].'">'.$lang['btn_edit'].'</a></li>';
         } else {
@@ -49,6 +46,15 @@ function tpl_bottombar()
         echo '<li class="pre-bulletted"><a href="?id='.$ID.'&amp;do=edit" class="interwiki" title="'.$lang['btn_source'].'">'.$lang['btn_source'].'</a></li>';
     }
 
+    echo '<br/>';
+
+    if($perm > AUTH_READ) {
+        echo '<li class="pre-bulletted"><a href="?do=revisions" class="interwiki" title="'.$lang['btn_revs'].'">'.$lang['btn_revs'].'</a></li>';
+    }
+    echo '<li class="pre-bulletted"><a href="?do=recent" class="interwiki" title="'.$lang['btn_rec'].'">'.$lang['btn_recent'].'</a></li>';
+
+    echo '<br/>';
+
     if($perm > AUTH_WRITE) {
         echo '<li class="pre-bulletted"><a href="?do=admin" class="interwiki" title="'.$lang['btn_admin'].'">'.$lang['btn_admin'].'</a></li>';
     }
@@ -57,8 +63,12 @@ function tpl_bottombar()
 				echo '<li class="pre-bulletted"><a href="?do=profile" class="interwiki" title="'.$lang['btn_profile'].'">'.$lang['btn_profile'].'</a></li>';
 				echo '<li class="pre-bulletted"><a href="?do=logout" class="interwiki" title="'.$lang['btn_logout'].'">'.$lang['btn_logout'].'</a></li>';
     } else {
-        echo '<li class="pre-bulletted"><a href="?do=login" class="interwiki" title="'.$lang['btn_login'].'">'.$lang['btn_login'].'</a></li>';
+        ### echo '<li class="pre-bulletted"><a href="?do=login" class="interwiki" title="'.$lang['btn_login'].'">'.$lang['btn_login'].'</a></li>';
+        echo '<li class="pre-bulletted"><a href="?do=login" class="interwiki">Login via OpenID</a></li>';
+        echo '<li class="pre-bulletted"><a href="?do=openid" class="interwiki">Login via account</a></li>';
     }
+
+    
     echo '</ul>';
 }
 
