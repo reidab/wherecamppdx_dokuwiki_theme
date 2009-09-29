@@ -64,8 +64,8 @@ function tpl_bottombar()
 				echo '<li class="pre-bulletted"><a href="?do=logout" class="interwiki" title="'.$lang['btn_logout'].'">'.$lang['btn_logout'].'</a></li>';
     } else {
         ### echo '<li class="pre-bulletted"><a href="?do=login" class="interwiki" title="'.$lang['btn_login'].'">'.$lang['btn_login'].'</a></li>';
-        echo '<li class="pre-bulletted"><a href="?do=login" class="interwiki">Login via OpenID</a></li>';
-        echo '<li class="pre-bulletted"><a href="?do=openid" class="interwiki">Login via account</a></li>';
+        echo '<li class="pre-bulletted"><a href="?do=openid" class="interwiki">Login via OpenID</a></li>';
+        echo '<li class="pre-bulletted"><a href="?do=login" class="interwiki">Login via account</a></li>';
     }
 
     
